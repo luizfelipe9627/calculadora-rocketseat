@@ -9,12 +9,11 @@ export const Operacao = styled.p`
   color: #6b6b6b;
   text-align: right;
   font-size: 20px;
-  line-height: 140%;
   letter-spacing: -0.4px;
   margin-bottom: 8px;
 
   p {
-    width: 245px;
+    width: 258px;
     text-align: end;
     overflow: hidden;
     text-overflow: ellipsis;
