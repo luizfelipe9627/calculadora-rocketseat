@@ -34,7 +34,9 @@ function App() {
     if (primeiroOperando && segundoOperando) {
       calcularResultado();
     }
-    setOperacao(operador);
+    if (primeiroOperando) {
+      setOperacao(operador);
+    }
   };
 
   // Função calcularResultado responsável por calcular o resultado da operação.

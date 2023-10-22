@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const Calculadora = styled.div`
   width: 356px;
-  max-width: 400px;
-  background-color: #2d2a37;
   padding: 54px 32px 32px 32px;
   border-radius: 48px;
   background: #2d2a37;
