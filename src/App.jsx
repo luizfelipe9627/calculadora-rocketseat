@@ -67,8 +67,8 @@ function App() {
       resultadoCalculado = (primeiro * segundo) / 100; // Calcula a porcentagem dos dois números.
     }
 
-    setResultado(resultadoCalculado.toString()); // Atualiza o estado resultado com o resultado da operação.
-    setPrimeiroNumero(resultadoCalculado.toString()); // Atualiza o estado primeiroNumero com o resultado da operação no display.
+    setResultado(resultadoCalculado); // Atualiza o estado resultado com o resultado da operação.
+    setPrimeiroNumero(resultadoCalculado.toString()); // Atualiza o estado primeiroNumero com o resultado da operação convertido para string.
     setSegundoNumero(""); // Limpa o estado segundoNumero.
     setOperacao(""); // Limpa o estado operacao.
   };
@@ -92,17 +92,24 @@ function App() {
 
   // Função handleClickLimparCE responsável por limpar o último campo digitado.
   const handleClickLimparCE = () => {
-    // Verifica se o segundo número está preenchido.
-    if (segundoNumero) {
-      setSegundoNumero(segundoNumero.slice(0, -1)); // Se estiver preenchido, remove o último número digitado.
+    // Verifica se o segundo número e o operador estão preenchidos/existem.
+    if (segundoNumero && operacao && primeiroNumero) {
+      return setSegundoNumero(segundoNumero.slice(0, -1)); // Se estiver preenchido, remove o último número digitado.
     }
+
     // Verifica se o operador está preenchido/existe.
     if (operacao) {
-      setOperacao(""); // Remove o operador.
+      return setOperacao(""); // Remove o operador.
     }
+
     // Verifica se o primeiro número está preenchido/existe.
     if (primeiroNumero) {
-      setPrimeiroNumero(primeiroNumero.slice(0, -1)); // Se estiver preenchido, remove o último número digitado.
+      return setPrimeiroNumero(primeiroNumero.slice(0, -1)); // Se estiver preenchido, remove o último número digitado.
+    }
+
+    // Verifica se o primeiro número existe e se o operador e o segundo número não existem.
+    if (primeiroNumero && !operacao && !segundoNumero) {
+      return setPrimeiroNumero("");
     }
   };
 
@@ -125,6 +132,7 @@ function App() {
             <span>
               <img src={IgualResultado} alt="Igual" />
             </span>
+
             {/* Se o resultado for diferente de vazio, mostra o resultado. Se não, mostra 0. */}
             <p>{resultado ? resultado : "0"}</p>
           </D.Resultado>
