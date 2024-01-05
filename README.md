@@ -1,4 +1,4 @@
-# Calculadora - Vai na Web
+# Calculadora
 
 ![Badge](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
 
@@ -12,7 +12,7 @@ Uma calculadora é um dispositivo que permite a resolução de cálculos matemá
 
 Esse desafio foi passado pelo Vai na Web para práticar o conhecimento em React.JS e Styled Components.
 
-### <a href="https://luizfelipe9627-calculadora-vnw.netlify.app">Acesse o projeto</a>
+### <a href="https://luizfelipe9627-calculadora-rocketeseat.netlify.app">Acesse o projeto</a>
 
 ## 🎨 Layout
 
